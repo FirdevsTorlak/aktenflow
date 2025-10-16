@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: src/AktenFlow.Api/Dockerfile
+    ports:
+      - "5080:8080"   # <-- host:container
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:8080
+    volumes:
+      - ../data:/app/data

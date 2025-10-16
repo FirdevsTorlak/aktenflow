@@ -1,0 +1,16 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "AktenFlow" {
+  [API \n ASP.NET Core] --> [Persistence \n EF Core + SQLite]
+  [API \n ASP.NET Core] --> [File Storage \n ./data/storage]
+}
+
+actor Clerk
+actor Lead
+actor Admin
+
+Clerk --> [API \n ASP.NET Core]
+Lead --> [API \n ASP.NET Core]
+Admin --> [API \n ASP.NET Core]
+@enduml
